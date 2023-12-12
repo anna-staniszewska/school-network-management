@@ -1,0 +1,59 @@
+        <?php
+
+        if (isset($_POST['submit'])) {
+        if(isset($_SESSION["Stanowisko"])){
+            ?>
+            <p>Zalogowano</p>
+            <?php
+        }else{
+            ?>
+            <p>Błąd</p>
+            <?php
+        }}
+        ?>
+
+            //<button type="submit" name="submit">ZALOGUJ</button>
+
+    <?php
+            if (isset($_POST["submit"])) {
+            echo "jest";
+            }
+
+    ?>
+
+            <button type="submit" name="submit">ZALOGUJ</button>
+
+    <?php
+    if (isset($_POST["submit"])) {
+        echo "jest";
+    }
+
+    ?>
+
+            <input type = "submit" name = "submit" value = "Submit">
+
+            <?php
+            if(isset($_SESSION["Stanowisko"])) {
+                echo "Zalogowano";
+            }else{
+                echo "Zły login";
+            }
+            ?>
+
+            if (isset($_POST["submit"])) {
+
+            <button  type="submit" name="submit" >ZALOGUJ</button>
+
+
+<?php
+if (isset($_POST["submit1"])) {
+    echo "jest";
+    if(isset($_SESSION["Stanowisko"])){
+        echo "Zalogowano";
+    }else{
+        echo "Błąd";
+    }
+}
+?>
+action="includes/login.php" method="post">
+
