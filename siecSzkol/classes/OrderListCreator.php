@@ -1,6 +1,7 @@
 <?php
 
-class OrderListCreator extends Dbh
+
+class OrderListCreator extends Database
 {
     /**
      *
@@ -159,16 +160,11 @@ class OrderListCreator extends Dbh
     public function makeCompleteOrder()
     {
 
-        //0. Walidacja danych w tabelce, wyrzucenie ewentualnych bledow DONE
-        //1. Znalezienie Max IdZamowienia Dla tablicy zamowien    SELECT IdZamowienia FROM Zamowienia ORDER BY IdZamowienia DESC LIMIT 1;   DONE
-        //2. Zanalezienie Max IdProduktu Dla tablicy produkty    SELECT IdProduktu FROM Produkty ORDER BY IdZamowienia DESC LIMIT 1;    DONE
-        //3. Zapisanie kazadego wprowadzonego wiersza z tabelki do tabeli produkty, nadajac im to samo IdZamowienia = MAX(Idzamowienia)+1   DONE
-        //4. Stworzenie nowego zamowienia w tabeli nadajac mu IdZamowienia=MAX(IdZamowienia), podpiac do nigo wszystkie produkty z tabelki  DONE
 
 
         $this->konstruktor();
 
-        //session_start();      //Zienic jak juz bedzie
+        //session_start();      //Zmienic jak juz bedzie
 
         if ($this->validate()) {
 
@@ -185,8 +181,7 @@ class OrderListCreator extends Dbh
             $this->addProductsFromForms($maxIdZamowienia, $maxIdProduktu);
 
 
-
-            header("loctation: AfterOrderCreation.php");
+            //header("loctation: AfterOrderCreation.php");
 
         }
     }
