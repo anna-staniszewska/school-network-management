@@ -19,7 +19,7 @@ class LoginModel extends Database{
 
         if ($stmt->rowCount() == 0) {
             $stmt = null;
-            $_SESSION["error"] = "nie znaleziono użytkownika";
+            $_SESSION["error"] = "Nie znaleziono użytkownika!";
             header("location: ../index.php?error=usernotfound");
             exit();
         }
@@ -29,7 +29,7 @@ class LoginModel extends Database{
         $stmt = null;
 
         if ($checkPassword == false) {
-            $_SESSION["error"] = "złe hasło";
+            $_SESSION["error"] = "Złe hasło!";
             header("location: ../index.php?error=wrongpassword");
             exit();
         } elseif ($checkPassword == true) {

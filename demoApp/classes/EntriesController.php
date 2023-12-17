@@ -10,7 +10,7 @@ class EntriesController extends Entries {
     public function getEntries() {
         if($this->emptyInput()==false) {
             //echo "Empty input!";
-            header("location: ../entriesList.php?error=emptyGetInput");
+            header("location: ../subPages/subSubPages/entriesList.php?error=emptyGetInput");
             exit();
         }
         $this->selectEntries($this->schoolID);

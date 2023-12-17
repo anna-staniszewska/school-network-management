@@ -22,7 +22,7 @@ class inputProductModel extends Database
             header("location: ../subPages/zgloszeniaProduktow?error=stmtfailed");
             exit();
         }else{
-            $_SESSION["feedbackInputProduct"] = "dziękujemy za zgłoszenie!";
+            $_SESSION["feedbackInputProduct"] = "Dziękujemy za zgłoszenie!";
         }
     }
 }

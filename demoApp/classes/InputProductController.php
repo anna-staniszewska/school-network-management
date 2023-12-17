@@ -16,12 +16,12 @@ class inputProductController extends inputProductModel
     public function input()
     {
         if ($this->emptyInput() == false) {
-            $_SESSION["feedbackInputProduct"] = "nie wprowadzono nazwy";
+            $_SESSION["feedbackInputProduct"] = "Nie wprowadzono nazwy!";
             header("location: ../subPages/inputProducts.php?error=emptyinput");
             exit();
         }
         if(strlen($this->product)>50){
-            $_SESSION["feedbackInputProduct"] = "nazwa produktu jest zbyt długa";
+            $_SESSION["feedbackInputProduct"] = "Nazwa produktu jest zbyt długa!";
             header("location: ../subPages/inputProducts.php?error=toolong");
             exit();
         }

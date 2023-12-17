@@ -6,13 +6,13 @@ class Entries extends Database {
 
         if(!$stmt->execute(array($schoolID))) {
             $stmt = null;
-            header("location: ../entriesList.php?error=selectStmtFailed");
+            header("location: ../subPages/subSubPages/entriesList.php?error=selectStmtFailed");
             exit();
         }
 
         if($stmt->rowCount() == 0) {
             $stmt = null;
-            header("location: ../entriesList.php?error=entries2SelectNotFound");
+            header("location: ../subPages/subSubPages/entriesList.php?error=entries2SelectNotFound");
             exit();
         }
 

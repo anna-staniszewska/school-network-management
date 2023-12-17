@@ -20,7 +20,7 @@ class LoginController extends LoginModel
     public function loginUser()
     {
         if ($this->emptyInput() == true) {
-            $_SESSION["error"] = "wprowadź dane";
+            $_SESSION["error"] = "Wprowadź wszystkie dane!";
             header("location: ../index.php?error=emptyinput");
             exit();
         }
