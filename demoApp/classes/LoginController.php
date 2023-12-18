@@ -14,7 +14,7 @@ class LoginController extends LoginModel
         $this->password = $password;
 //        $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 //        header("location: ../index.php?hash=" . $hashedPwd);
-        //exit();
+//        exit();
     }
 
     public function loginUser()
