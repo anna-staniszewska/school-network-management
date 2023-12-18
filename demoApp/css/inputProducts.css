@@ -9,19 +9,30 @@ body{
 }
 
 header{
-    display: flex;
     background-color: mintcream;
-    line-height: 50px;
     border-bottom: 2px solid rgb(40, 74, 87);
 }
 
+.headerContainer{
+    display: flex;
+}
+
 #logo{
-    flex: 1;
+    flex: 2;
 }
 
 #welcome{
-    flex: 8;
+    flex: 6;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#zegar{
+    flex: 2;
+    text-align: center;
+    font-size: 20px;
+    padding: 0px 10px;
 }
 
 h1{
@@ -34,16 +45,13 @@ a{
     border: none;
     color: white;
     padding: 12px 20px;
-    font-size: 15px;
+    font-size: 20px;
     cursor: pointer;
     font-family: "Times New Roman", Times, serif;
     text-decoration: none;
-    margin: 5px;
+    float: right;
 }
 
-#zegar{
-    flex: 1;
-}
 
 main{
     background-color: rgba(255, 255, 255, 0.473);
@@ -62,7 +70,6 @@ form{
     margin: 100px auto;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     flex-direction: column;
 }
 
@@ -78,7 +85,6 @@ input{
 }
 
 input[type=text] {
-    /* width: 60%; */
     padding: 20px;
 }
 
@@ -92,9 +98,9 @@ button[type=submit] {
     color: white;
     padding: 16px 32px;
     font-size: 20px;
-    margin: 4px 2px;
     cursor: pointer;
     font-family: "Times New Roman", Times, serif;
+    position: right;
 }
 
 #feedback{
