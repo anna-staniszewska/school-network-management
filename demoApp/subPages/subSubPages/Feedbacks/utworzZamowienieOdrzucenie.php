@@ -30,7 +30,7 @@
     <h3>Nie udało się złożyć zamówienia</h3>
 </div>
 
-<a href="../utworzZamowienie.php">Złóż następne zamówienie</a>
+<a href="../newOrder.php">Złóż następne zamówienie</a>
 
 </body>
 </html>
