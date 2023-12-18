@@ -22,7 +22,7 @@
             <ul class="menu">
                 <li><a href="../includes/entries.php">Zgłoszenia pracowników</a></li>
                 <li><a href="subSubPages/utworzZamowienie.php">Nowe zamówienie</a></li>
-                <li><a href="subSubPages/listaZamowien.php">Lista zamównień</a></li>
+                <li><a href="#">Lista zamównień</a></li>
             </ul>
         </div>
     </div>
