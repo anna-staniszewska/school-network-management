@@ -1,8 +1,8 @@
 USE siecszkol;
 
 
--- Table: Kandydaci
-CREATE TABLE Kandydaci (
+-- Table: kandydaci
+CREATE TABLE kandydaci (
     IdKandydata int  NOT NULL,
     Stanowisko varchar(50) CHARACTER SET utf8 NOT NULL,
     Imie varchar(50) CHARACTER SET utf8 NOT NULL,
@@ -20,8 +20,8 @@ CREATE TABLE Kandydaci (
 
 
 
--- Table: Pracownicy
-CREATE TABLE Pracownicy (
+-- Table: pracownicy
+CREATE TABLE pracownicy (
     IdPracownika int  NOT NULL,
     IdSzkoly int  NOT NULL,
     Stanowisko varchar(50) CHARACTER SET utf8  NOT NULL,
@@ -40,8 +40,8 @@ CREATE TABLE Pracownicy (
     CONSTRAINT Pracownicy_pk PRIMARY KEY (IdPracownika)
 );
 
--- Table: Produkty
-CREATE TABLE Produkty (
+-- Table: produkty
+CREATE TABLE produkty (
     IdProduktu int  NOT NULL,
     IdZamowienia int  NOT NULL,
     Nazwa varchar(50) CHARACTER SET utf8 NOT NULL,
@@ -52,8 +52,8 @@ CREATE TABLE Produkty (
     CONSTRAINT Produkty_pk PRIMARY KEY (IdProduktu)
 );
 
--- Table: Rozmowy
-CREATE TABLE Rozmowy (
+-- Table: rozmowy
+CREATE TABLE rozmowy (
     IdRozmowy int  NOT NULL,
     IdSali varchar(6)  NOT NULL,
     IdKandydata int NOT NULL,
@@ -63,15 +63,15 @@ CREATE TABLE Rozmowy (
     CONSTRAINT Rozmowy_pk PRIMARY KEY (IdRozmowy)
 );
 
--- Table: Sale
-CREATE TABLE Sale (
+-- Table: sale
+CREATE TABLE sale (
     IdSali varchar(6)  NOT NULL,
     IdSzkoly int  NOT NULL,
     CONSTRAINT Sale_pk PRIMARY KEY (IdSali)
 );
 
--- Table: Szkola
-CREATE TABLE Szkola (
+-- Table: szkola
+CREATE TABLE szkola (
     IdSzkoly int  NOT NULL,
     Nazwa varchar(50)  NOT NULL,
     Miejscowosc varchar(50) CHARACTER SET utf8 NULL,
@@ -80,8 +80,8 @@ CREATE TABLE Szkola (
     CONSTRAINT Szkola_pk PRIMARY KEY (IdSzkoly)
 );
 
--- Table: Zamowienia
-CREATE TABLE Zamowienia (
+-- Table: zamowienia
+CREATE TABLE zamowienia (
     IdZamowienia int  NOT NULL,
     IdSzkoly int  NOT NULL,
     Data date  NOT NULL,
@@ -91,8 +91,8 @@ CREATE TABLE Zamowienia (
     CONSTRAINT Zamowienia_pk PRIMARY KEY (IdZamowienia)
 );
 
--- Table: Zgloszenia
-CREATE TABLE Zgloszenia (
+-- Table: zgloszenia
+CREATE TABLE zgloszenia (
     IdZgloszenia int  NOT NULL,
     IdSzkoly int  NOT NULL,
     Nazwa varchar(100) CHARACTER SET utf8 NOT NULL,
@@ -103,29 +103,29 @@ CREATE TABLE Zgloszenia (
 
 -- foreign keys
 -- Reference: Produkty_Zamowienia (table: Produkty)
-ALTER TABLE Produkty ADD CONSTRAINT Produkty_Zamowienia FOREIGN KEY Produkty_Zamowienia (IdZamowienia) 
-    REFERENCES Zamowienia (IdZamowienia);
+ALTER TABLE produkty ADD CONSTRAINT Produkty_Zamowienia FOREIGN KEY Produkty_Zamowienia (IdZamowienia) 
+    REFERENCES zamowienia (IdZamowienia);
 
 -- Reference: Rozmowy_Kandydaci (table: Rozmowy)
-ALTER TABLE Rozmowy ADD CONSTRAINT Rozmowy_Kandydaci FOREIGN KEY Rozmowy_Kandydaci (IdKandydata)
-    REFERENCES Kandydaci (IdKandydata);
+ALTER TABLE rozmowy ADD CONSTRAINT Rozmowy_Kandydaci FOREIGN KEY Rozmowy_Kandydaci (IdKandydata)
+    REFERENCES kandydaci (IdKandydata);
 
 -- Reference: Rozmowy_Sale (table: Rozmowy)
-ALTER TABLE Rozmowy ADD CONSTRAINT Rozmowy_Sale FOREIGN KEY Rozmowy_Sale (IdSali)
-    REFERENCES Sale (IdSali);
+ALTER TABLE rozmowy ADD CONSTRAINT Rozmowy_Sale FOREIGN KEY Rozmowy_Sale (IdSali)
+    REFERENCES sale (IdSali);
 
 -- Reference: Sale_Szkola (table: Sale)
-ALTER TABLE Sale ADD CONSTRAINT Sale_Szkola FOREIGN KEY Sale_Szkola (IdSzkoly)
-    REFERENCES Szkola (IdSzkoly);
+ALTER TABLE sale ADD CONSTRAINT Sale_Szkola FOREIGN KEY Sale_Szkola (IdSzkoly)
+    REFERENCES szkola (IdSzkoly);
 
 -- Reference: Szkola_Pracownicy (table: Pracownicy)
-ALTER TABLE Pracownicy ADD CONSTRAINT Szkola_Pracownicy FOREIGN KEY Szkola_Pracownicy (IdSzkoly)
-    REFERENCES Szkola (IdSzkoly);
+ALTER TABLE pracownicy ADD CONSTRAINT Szkola_Pracownicy FOREIGN KEY Szkola_Pracownicy (IdSzkoly)
+    REFERENCES szkola (IdSzkoly);
 
 -- Reference: Zamowienia_Szkola (table: Zamowienia)
-ALTER TABLE Zamowienia ADD CONSTRAINT Zamowienia_Szkola FOREIGN KEY Zamowienia_Szkola (IdSzkoly)
-    REFERENCES Szkola (IdSzkoly);
+ALTER TABLE zamowienia ADD CONSTRAINT Zamowienia_Szkola FOREIGN KEY Zamowienia_Szkola (IdSzkoly)
+    REFERENCES szkola (IdSzkoly);
 
 -- Reference: Zgloszenia_Szkola (table: Zgloszenia)
-ALTER TABLE Zgloszenia ADD CONSTRAINT Zgloszenia_Szkola FOREIGN KEY Zgloszenia_Szkola (IdSzkoly)
-    REFERENCES Szkola (IdSzkoly);
+ALTER TABLE zgloszenia ADD CONSTRAINT Zgloszenia_Szkola FOREIGN KEY Zgloszenia_Szkola (IdSzkoly)
+    REFERENCES szkola (IdSzkoly);
