@@ -6,6 +6,7 @@ class MakeOrderController extends MakeOrderModel
 {
     private $order;
     private $error;
+
     public function __construct($order)
     {
         $this->order = $order;
@@ -33,10 +34,11 @@ class MakeOrderController extends MakeOrderModel
         }
     }
 
-    public function printError(){
-        if(strlen($this->error) == 0){
+    public function printError()
+    {
+        if (strlen($this->error) == 0) {
             return "Nieznay_blad";
-        } else{
+        } else {
             return $this->error;
         }
     }
@@ -44,28 +46,28 @@ class MakeOrderController extends MakeOrderModel
     public function makeCompleteOrder()
     {
 
-        if ($this->validate()) {
+        try {
+            if ($this->validate()) {
 
-            $maxIdZamowienia = $this->getMaxIdZamowienia();
+                $idZamowienia = $this->getUniqueId();
 
-            $maxIdProduktu = $this->getMaxIdProduktu();
 
-            //dodanie zamowienia
-            if($this->addOrder($maxIdZamowienia) == false){
-                return false;
+                //dodanie zamowienia
+                if ($this->addOrder($idZamowienia) == false) {
+                    return false;
+                }
+
+                //dodanie wszystkich produktow z formularza
+                if ($this->addProductsFromForms($idZamowienia, $_POST) == false) {
+                    return false;
+                }
+
+                return true;
+
             }
-
-            //dodanie wszystkich produktow z formularza
-            if($this->addProductsFromForms($maxIdZamowienia, $maxIdProduktu, $_POST) == false){
-                return false;
-            }
-
-            return true;
-
-        } else {
-            return false;
+        } catch (Exception $e) {
+            echo 'Caught exception: ', $e->getMessage(), "\n";
         }
-
     }
 
 }
