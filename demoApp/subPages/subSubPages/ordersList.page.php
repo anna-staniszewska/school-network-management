@@ -87,7 +87,7 @@ session_start();
 
   <footer>&copy; 2023 Sieć szkół</footer>
   <a class="button" id="logout" href="../../includes/logout.inc.php">Wyloguj</a>
-  <a class="button" href="../secretariatHome.page.php">HOME</a>
+  <a class="button" href="../ownerHome.page.php">HOME</a>
 
   </header>
 
