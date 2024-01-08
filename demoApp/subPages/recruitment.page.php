@@ -49,7 +49,11 @@
                         echo $row[$j]['GodzinaRozpoczecia'] . ' - ' . $row[$j]['GodzinaZakonczenia'] . '<br>';
                         echo $row[$j]['Imie'] . ' ' . $row[$j]['Nazwisko'] . '<br>';
                         echo $row[$j]['Stanowisko'] . '<br>';
-                        echo $row[$j]['IdSali'];
+                        echo $row[$j]['IdSali'] . '<br>';
+                        if($_SESSION["Stanowisko"]=="wlasciciel") {
+                            echo "Szkoła nr " . $row[$j]['IdSzkoly'];
+
+                        }
                         echo "</div>";
                     }
                 }

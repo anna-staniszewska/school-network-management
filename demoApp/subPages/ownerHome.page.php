@@ -84,7 +84,8 @@ session_start();
 <div class="main">
     <div id="nav">
         <ul class="menu">
-            <li><a href="subSubPages/scheduleOwner.page.php">Harmonogram rekrutacji</a></li>
+            <!--<li><a href="subSubPages/scheduleOwner.page.php">Harmonogram rekrutacji</a></li>-->
+            <li><a href="../includes/schedule.inc.php">Harmonogram rekrutacji</a></li>
             <li><a href="../includes/orders.inc.php">Zamówienia produktów</a></li>
         </ul>
     </div>
