@@ -18,6 +18,7 @@ header{
 
 #logo{
     flex: 2;
+    margin: 20px;
 }
 
 h1{
@@ -36,11 +37,22 @@ h1{
 }
 
 footer{
-    float: left;
-    padding: 10px;
+    text-align: right;
+    padding: 10px 50px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
 a{
+    background-color: rgb(40, 74, 87);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration: none;
     float: right;
 }
 
@@ -108,4 +120,18 @@ input{
 #validate{
     float: right;
     width: 250px;
+}
+
+a:hover {
+    color: black;
+}
+
+button:hover {
+
+  color: black;
+}
+
+input:hover {
+
+  color: black;
 }

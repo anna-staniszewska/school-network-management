@@ -15,6 +15,7 @@ header{
 
 #logo{
     flex: 8;
+    margin: 20px;
 }
 
 img{
@@ -70,7 +71,7 @@ label{
 input{
     font-family: "Times New Roman", Times, serif;
     font-size: 15px;
-    
+
 }
 
 input[type=text] {

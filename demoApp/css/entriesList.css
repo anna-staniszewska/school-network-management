@@ -1,17 +1,14 @@
 body{
-    background-color: mintcream;
-    background-image: url("szkola_tlo.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     font-family: "Times New Roman", Times, serif;
     width: 95%;
     margin: auto;
+    background-color: mintcream;
 }
 
 header{
     background-color: mintcream;
     border-bottom: 2px solid rgb(40, 74, 87);
+    box-shadow: 0 4px 2px -2px rgb(40, 74, 87);
 }
 
 .headerContainer{
@@ -23,11 +20,12 @@ header{
     margin: 20px;
 }
 
-#welcome{
+h1{
     flex: 6;
     text-align: center;
     justify-content: center;
     align-items: center;
+    font-size: 40px;
 }
 
 #zegar{
@@ -37,9 +35,12 @@ header{
     padding: 0px 10px;
 }
 
-h1{
-    color: rgb(40, 74, 87);
-    font-size: 50px;
+footer{
+    text-align: right;
+    padding: 10px 50px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
 a{
@@ -55,23 +56,10 @@ a{
 }
 
 main{
-    background-color: rgba(255, 255, 255, 0.473);
-    padding: 20px;
-    height: 600px;
-    border-radius: 0px 0px 20px 20px;
-}
-
-footer{
-    text-align: right;
-    padding: 10px 50px;
-
-    position: fixed;
-    bottom: 0;
-    right: 0;
-}
-
-.main {
-    text-align: center;
+    /*background-color: rgba(255, 255, 255, 0.473);*/
+    width: 80%;
+    margin: 80px auto;
+    /*box-shadow: 2px 2px 10px 2px rgb(40, 74, 87);*/
 }
 
 h2{
@@ -79,57 +67,73 @@ h2{
     text-align: center;
 }
 
-th{
-
-      font-size: 25px;
-      font-weight: 800;
+.button{
+    background-color: rgb(40, 74, 87);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration: none;
 
 }
 
-form{
+#logout{
+    border-left: 2px solid mintcream;
+}
+
+#changeTable{
+background-color: rgba(255, 255, 255, 0.473);
+box-shadow: 2px 2px 10px 2px rgb(40, 74, 87);
+}
+
+#delete{
+    flex: 0.5;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+table{
+    width: 100%;
+    margin: 0px 10px 10px 0px;
+    border-collapse: collapse;
+    flex: 9;
+}
+
+table tr td, table tr th {
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 10px;
+}
+
+tr{
+    font-size: 20px;
+}
+
+/*form{
     width: 600px;
     margin: 100px auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
-}
+}*/
 
-button[type=submit] {
-    background-color: rgb(40, 74, 87);
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    font-size: 20px;
-    cursor: pointer;
-    font-family: "Times New Roman", Times, serif;
-    position: right;
-}
-
-/*testowe*/
-table{
+input{
     font-family: "Times New Roman", Times, serif;
     font-size: 20px;
-
-
+    width: 230px;
+    float: right;
+    margin: -10px 0;
 }
 
-td{ /*dotyczy ramki z data wyswietlana w tabeli*/
 
-  background-color: white;
-  border: none;
-  color: black;
-  font-family: "Times New Roman", Times, serif;
-  position: center;
-  padding: 1px 10%;
-}
-
-/**/
 
 a:hover {
     color: black;
 }
 
-button:hover {
+input:hover {
 
   color: black;
 }
