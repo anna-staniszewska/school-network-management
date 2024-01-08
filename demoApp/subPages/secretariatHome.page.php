@@ -87,6 +87,8 @@
                 <li><a href="../includes/entries.inc.php">Zgłoszenia pracowników</a></li>
                 <li><a href="subSubPages/newOrder.page.php">Nowe zamówienie</a></li>
                 <li><a href="../includes/orders.inc.php">Lista zamównień</a></li>
+                <li><a href="subSubPages/newEmployee.page.php">Rejestracja pracownika</a></li>
+
             </ul>
         </div>
     </div>

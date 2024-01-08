@@ -1,0 +1,29 @@
+<?php
+session_start();
+
+if(isset($_POST["submit"])) {
+
+    $name = $_POST["name"];
+    $surname = $_POST["surname"];
+    $position = $_POST["position"];
+    $dateOfBirth = $_POST["dateOfBirth"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $login = $_POST["login"];
+    $password = $_POST["password"];
+    $pesel = $_POST["pesel"];
+    $town = $_POST["town"];
+    $road = $_POST["road"];
+    $building = $_POST["building"];
+    $apartment = $_POST["apartment"];
+
+    include "../classes/Database.php";
+    include "../classes/newEmployeeModel.php";
+    include "../classes/newEmployeeController.php";
+
+    $employee = new \classes\newEmployeeController($name, $surname, $position, $dateOfBirth, $email, $phone,
+        $login, $password, $pesel, $town, $road, $building, $apartment);
+
+    $employee->newEmployee();
+    header("location: ../subPages/subSubPages/newEmployee.page.php?ok=ok");
+}
