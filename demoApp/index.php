@@ -59,7 +59,7 @@ session_start();
 
                     <script>document.write("Dzisiaj jest " + getDateStr())</script>
                 </p>
-                
+
                 <p id="czas"></p>
                 <script>
                     setInterval(myTimer, 1000);
@@ -68,13 +68,13 @@ session_start();
                         const date = new Date();
                         document.getElementById("czas").innerHTML = date.toLocaleTimeString();
                     }
-                </script>   
-            </div>     
+                </script>
+            </div>
         </header>
 
         <div id="main">
             <h1>LOGOWANIE</h1>
-        
+
             <main>
                 <form action="includes/login.inc.php" method="post">
                     <label>Wpisz nazwę użytkownika</label>
