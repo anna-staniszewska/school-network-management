@@ -15,22 +15,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, inital-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Home Sekretariatu</title>
   <link rel="stylesheet" type="text/css" href="../../css/entriesList.css">
+  <title>Zgłoszone produkty</title>
+  <link rel="shortcut icon" href="../../css/logo.jpg">
 </head>
 <body>
+
 <header>
   <div class="headerContainer">
       <div id="logo">
           <img src="../../css/logo.jpg" width=150px>
       </div>
 
-  <div id="welcome">
+  <!--  <div id="welcome">
       <h1>Cześć, <?php
-          echo $_SESSION["Imie"];
+    //      echo $_SESSION["Imie"];
           ?>!
       </h1>
-  </div>
+  </div>  -->
+
+    <h1>Zgłoszone produkty</h1>
 
     <div id="zegar">
         <p id="data">
@@ -87,23 +91,32 @@
     </div>
 </div>
 
-<a href="../../includes/logout.inc.php">Wyloguj</a>
+<footer>&copy; 2023 Sieć szkół</footer>
+<a class="button" id="logout" href="../../includes/logout.inc.php">Wyloguj</a>
+<a class="button" href="../secretariatHome.page.php">HOME</a>
 
 </header>
 
 <main>
-    <h2>Zgłoszone produkty</h2>
+
     <?php
     if(isset($_SESSION["IdSzkoly"]))
     {
     ?>
         <form action="../../includes/deleteEntries.inc.php" method="post">
+          <div id = "changeTable">
             <table id="tab">
+
                 <th>Data zgłoszenia</th>
                 <th>Nazwa produktu</th>
                 <th>Dodano do zamówienia</th>
             </table>
-            <button type="submit" name="delete">Usuń wybrane produkty</button>
+          </div>
+        <!--    <div id="delete">
+                <button class="button" type="submit" name="delete">Usuń wybrane produkty</button>
+            </div> -->
+
+            <input class="button" type="submit" name="delete" value="Usuń wybrane produkty">
         </form>
         <script>
             newRow();
@@ -137,6 +150,5 @@
     }
     ?>
 
-    <footer>&copy; 2023 Sieć szkół</footer>
 </body>
 </html>

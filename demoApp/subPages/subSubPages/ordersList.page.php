@@ -10,7 +10,8 @@ session_start();
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="../../css/ordersList.css">
-    <title>Zamowienia</title>
+    <title>Lista zamówień</title>
+    <link rel="shortcut icon" href="../../css/logo.jpg">
 </head>
 <body>
 
@@ -20,12 +21,14 @@ session_start();
             <img src="../../css/logo.jpg" width=150px>
         </div>
 
-    <div id="welcome">
+  <!--  <div id="welcome">
         <h1>Cześć, <?php
-            echo $_SESSION["Imie"];
+          //  echo $_SESSION["Imie"];
             ?>!
         </h1>
-    </div>
+    </div>-->
+
+    <h1>Lista Zamówień</h1>
 
       <div id="zegar">
           <p id="data">
@@ -82,12 +85,14 @@ session_start();
       </div>
   </div>
 
-  <a href="../../includes/logout.inc.php">Wyloguj</a>
+  <footer>&copy; 2023 Sieć szkół</footer>
+  <a class="button" id="logout" href="../../includes/logout.inc.php">Wyloguj</a>
+  <a class="button" href="../secretariatHome.page.php">HOME</a>
 
   </header>
 
 <main>
-<h2>Zamówienia</h2>
+
     <?php
 
     //header("location: ../includes/orders.inc.php");
@@ -139,6 +144,5 @@ session_start();
 
 </main>
 
-<footer>&copy; 2023 Sieć szkół</footer>
 </body>
 </html>

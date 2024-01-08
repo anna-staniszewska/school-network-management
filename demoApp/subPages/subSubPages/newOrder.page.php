@@ -6,6 +6,8 @@
     <head>
         <title>Tworzenie zamówienia</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" type="text/css" href="../../css/newOrder.css">
         <link rel="shortcut icon" href="../../css/logo.jpg">
     </head>
@@ -61,7 +63,7 @@
 
                         <script>document.write("Dzisiaj jest " + getDateStr())</script>
                     </p>
-                
+
                     <p id="czas"></p>
                     <script>
                         setInterval(myTimer, 1000);
@@ -70,7 +72,7 @@
                             const date = new Date();
                             document.getElementById("czas").innerHTML = date.toLocaleTimeString();
                         }
-                    </script>  
+                    </script>
                 </div>
             </div>
 
@@ -79,14 +81,14 @@
             <a class="button" href="../secretariatHome.page.php">HOME</a>
         </header>
 
-        <main> 
-            <h2>Utwórz zamówienie</h2>               
+        <main>
+            <h2>Utwórz zamówienie</h2>
             <form method="POST" action="../../includes/makeOrder.inc.php">
                 <div id="changeTable">
                     <div id="add">
                         <button class="button" type="button" onclick="addItem();">+</button>
                     </div>
-            
+
                     <table>
                         <tr>
                             <th>Nazwa</th>
@@ -99,7 +101,7 @@
                         <tbody id="tbody"></tbody>
                     </table>
                 </div>
-                
+
                 <input class="button" id="validate" type="submit" name="addOrder" value="Potwierdź zamówienie">
             </form>
 
