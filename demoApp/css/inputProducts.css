@@ -50,13 +50,14 @@ a{
     font-family: "Times New Roman", Times, serif;
     text-decoration: none;
     float: right;
+    margin: 0 0 0 2px;
 }
 
 
 main{
     background-color: rgba(255, 255, 255, 0.473);
     padding: 20px;
-    height: 600px;
+    /* height: auto; */
     border-radius: 0px 0px 20px 20px;
 }
 

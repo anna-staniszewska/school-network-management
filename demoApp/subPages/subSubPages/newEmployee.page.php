@@ -10,6 +10,11 @@ session_start();
     <title>Zgłoszenia produktów</title>
     <link rel="stylesheet" type="text/css" href="../../css/inputProducts.css">
     <link rel="shortcut icon" href="../../css/logo.jpg">
+    <!-- <style>
+        main{
+            height: auto;
+        }
+    </style> -->
 </head>
 
 <body>
@@ -81,7 +86,8 @@ session_start();
         </div>
     </div>
 
-    <a href="../../includes/logout.inc.php">Wyloguj</a>
+    <a class="button" href="../../includes/logout.inc.php">Wyloguj</a>
+    <a class="button" href="../secretariatHome.page.php">HOME</a>
 </header>
 
 <main>
@@ -148,7 +154,7 @@ session_start();
         <br>
 
 
-        <button type = "submit" name = "submit">Zgłoś</button>
+        <button type = "submit" name = "submit">Zarejestruj</button>
     </form>
 
     <script>
