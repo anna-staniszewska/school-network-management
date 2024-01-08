@@ -19,9 +19,9 @@ session_start();
         </div>
 
         <div id="welcome">
-            <h1>Cześć <?php
+            <h1>Cześć, <?php
                 echo $_SESSION["Imie"];
-                ?>
+                ?>!
             </h1>
         </div>
         <div id="zegar">
