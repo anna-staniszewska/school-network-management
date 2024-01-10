@@ -1,0 +1,25 @@
+INSERT INTO `sale` (`IdSali`, `IdSzkoly`) VALUES
+('A-1', 1),
+('B-3', 1),
+('C-5', 1),
+('A-4', 2);
+
+INSERT INTO `kandydaci` (`IdKandydata`, `Stanowisko`, `Imie`, `Nazwisko`, `DataUrodzenia`, `Pesel`, `NrTelefonu`, `Email`, `Miejscowosc`, `Ulica`, `NrBudynku`, `NrLokalu`) VALUES
+(1, 'Pracownik sekretariatu', 'Adam', 'Miśkiewicz', '1983-06-12', '12345678901', '798123465', 'amisek@gmail.com', 'Miśkowo', 'Miła', '87', '12'),
+(3, 'Dyrektor', 'Henryk', 'Śpiewkiewicz', '1983-06-12', '12345678901', '798123465', 'hesp@gmail.com', 'Nutkowo', 'Piękna', '87', '12'),
+(4, 'Pracownik sekretariatu', 'Patryk', 'Szymański', '1983-06-12', '12345678901', '798123465', 'hesp@gmail.com', 'Nutkowo', 'Piękna', '87', '12'),
+(5, 'Pracownik sekretariatu', 'Piotr', 'Głośny', '1983-06-12', '12345678901', '798123465', 'hesp@gmail.com', 'Nutkowo', 'Piękna', '87', '12'),
+(2, 'Pracownik', 'Juliusz', 'Słowik', '1983-06-12', '12345678901', '798123465', 'juslo@gmail.com', 'Sówki Małe', 'Urocza', '87', '12'),
+(6, 'Pracownik', 'Juliusz', 'Słowik', '1983-06-12', '12345678901', '798123465', 'juslo@gmail.com', 'Sówki Małe', 'Urocza', '87', '12');
+
+INSERT INTO `rozmowy` (`IdRozmowy`, `IdSali`, `IdKandydata`, `GodzinaRozpoczecia`, `GodzinaZakonczenia`, `Data`) VALUES
+(1, 'A-1', 1, '09:00:00', '10:00:00', '2024-01-02'),
+(3, 'A-1', 5, '09:00:00', '10:00:00', '2024-01-03'),
+(4, 'B-3', 3, '11:00:00', '13:00:00', '2024-01-03'),
+(5, 'C-5', 4, '17:00:00', '18:00:00', '2024-01-04'),
+(6, 'C-5', 2, '11:00:00', '13:00:00', '2024-01-05'),
+(7, 'A-4', 1, '11:00:00', '13:00:00', '2024-01-08'),
+(8, 'A-4', 4, '11:00:00', '13:00:00', '2024-01-08'),
+(9, 'A-4', 3, '09:00:00', '10:00:00', '2024-01-08'),
+(10, 'A-1', 2, '11:00:00', '13:00:00', '2024-01-10'),
+(11, 'B-3', 5, '12:30:00', '13:00:00', '2024-01-12');

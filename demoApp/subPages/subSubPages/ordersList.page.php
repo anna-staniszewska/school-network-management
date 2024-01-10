@@ -21,14 +21,7 @@ session_start();
             <img src="../../css/logo.jpg" width=150px>
         </div>
 
-  <!--  <div id="welcome">
-        <h1>Cześć, <?php
-          //  echo $_SESSION["Imie"];
-            ?>!
-        </h1>
-    </div>-->
-
-    <h1>Lista Zamówień</h1>
+        <h1>Lista Zamówień</h1>
 
       <div id="zegar">
           <p id="data">
@@ -87,9 +80,16 @@ session_start();
 
   <footer>&copy; 2023 Sieć szkół</footer>
   <a class="button" id="logout" href="../../includes/logout.inc.php">Wyloguj</a>
-  <a class="button" href="../ownerHome.page.php">HOME</a>
+  <?php
+        if($_SESSION["Stanowisko"]=="wlasciciel") {
+            echo '<a class="button" href="../ownerHome.page.php">HOME</a>';
+        }
+        elseif($_SESSION["Stanowisko"]=="pracownikSekretariatu") {
+            echo '<a class="button" href="../secretariatHome.page.php">HOME</a>';
+        }
+    ?>
 
-  </header>
+</header>
 
 <main>
 

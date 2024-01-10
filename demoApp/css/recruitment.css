@@ -55,15 +55,6 @@ a{
     float: right;
 }
 
-
-main{
-    background-color: rgba(255, 255, 255, 0.473);
-    width: 80%;
-    margin: 80px auto;
-    box-shadow: 2px 2px 10px 2px rgb(40, 74, 87);
-}
-
-
 h2{
     padding: 10px;
 }
@@ -72,32 +63,53 @@ h2{
     border-left: 2px solid mintcream;
 }
 
-#wiersz{ /*dotyczy wyswietlania wiersza w tabeli*/
-
-  background-color: white;
-  border: none;
-  color: black;
-  font-family: "Times New Roman", Times, serif;
-  position: center;
-  padding: 5px 10%;
-
-  font-size: 20px;
-
+main{
+    margin: 80px 0;
 }
 
-#produkt{ /*dotyczy wyswietlania produktow w tabeli*/
-
-  background-color: white;
-  border: none;
-  color: black;
-  font-family: "Times New Roman", Times, serif;
-  position: center;
-  padding: 2px 20%;
-
-  font-size: 20px;
+form{
+    margin:auto;
+    width: 420px;
 }
 
-a:hover {
+button{
+    background-color: rgb(40, 74, 87);
+    color: white;
+    padding: 12px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    margin: 10px 0;
+}
+
+button:last-child{
+    float: right;
+}
+
+a:hover, button:hover{
     color: black;
 }
 
+table, tbody{
+    background-color: rgba(255, 255, 255, 0.473);
+    box-shadow: 1px 1px 8px 1px rgb(40, 74, 87);
+    width: 90%;
+    margin: auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th{
+    padding: 10px 0;
+}
+
+th, td{
+    border: 1px solid black;
+}
+
+td > div{
+    background-color: orange;
+    margin: 5px;
+    box-shadow: 3px 3px 3px gray;
+    padding: 5px;
+}
