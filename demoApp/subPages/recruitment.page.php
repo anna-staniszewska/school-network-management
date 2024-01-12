@@ -87,6 +87,7 @@
 
 </header>
 <main>
+    <a href="../includes/inputNewInterview.inc.php">Dodaj rozmowę</a><br>
     <?php
         $today = date("w", strtotime($_SESSION["data"]));
         if($today==0) $today = 7;
