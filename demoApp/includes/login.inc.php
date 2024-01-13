@@ -27,7 +27,7 @@ if(isset($_POST["submit"])){
         header("location: ../subPages/secretariatHome.page.php");
 
     }elseif($_SESSION["Stanowisko"] == "pracownikDzialuZakupow"){
-        header("location: ../subPages/ordersVaidate.page.php");
+        header("location: ../includes/orders.inc.php");
 
     }elseif($_SESSION["Stanowisko"] == "specjalistaDsDostaw"){
         header("location: ../subPages/deliveryCheck.page.php");

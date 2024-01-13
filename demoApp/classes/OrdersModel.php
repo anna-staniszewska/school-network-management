@@ -50,7 +50,30 @@ class OrdersModel extends Database {
          );
         $stmtOrders->execute([$schoolId]);
         $stmtProducts->execute([$schoolId]);
-      }
+      }else if($jobPosition=="pracownikDzialuZakupow"){
+        $stmtOrders = $this->connect()->prepare(
+        "SELECT  
+          zamowienia.*, szkola.Nazwa
+        FROM 
+          zamowienia
+        INNER JOIN szkola ON zamowienia.IdSzkoly=szkola.IdSzkoly
+        WHERE zamowienia.IdSzkoly=?
+        ORDER BY zamowienia.Data" 
+        );
+    
+       $stmtProducts = $this->connect()->prepare(
+        "SELECT
+          produkty.*
+        FROM
+          produkty
+        INNER JOIN zamowienia ON produkty.IdZamowienia=zamowienia.IdZamowienia
+        WHERE zamowienia.IdSzkoly=?
+        ORDER BY zamowienia.Data"
+       );
+      $stmtOrders->execute([$schoolId]);
+      $stmtProducts->execute([$schoolId]);
+      
+    }
       else{
         //header ktory wywala do logowania
       }
