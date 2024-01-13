@@ -19,10 +19,10 @@ if(isset($_POST["submit"])) {
     $apartment = $_POST["apartment"];
 
     include "../classes/Database.php";
-    include "../classes/newEmployeeModel.php";
-    include "../classes/newEmployeeController.php";
+    include "../classes/NewEmployeeModel.php";
+    include "../classes/NewEmployeeController.php";
 
-    $employee = new \classes\newEmployeeController($name, $surname, $position, $dateOfBirth, $email, $phone,
+    $employee = new \classes\NewEmployeeController($name, $surname, $position, $dateOfBirth, $email, $phone,
         $login, $password, $passwordCheck, $pesel, $town, $road, $building, $apartment);
 
     $employee->newEmployee();
