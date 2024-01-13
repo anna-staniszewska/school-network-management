@@ -110,7 +110,13 @@ session_start();
         <br>
         <label>Podaj stanowisko:</label>
         <br>
-        <input type="text" name="position" placeholder="stanowisko" minlength="2" maxlength="25" onclick="hide()">
+        <select name="position" onclick="hide()">
+            <option value="pracownik">pracownik</option>
+            <option value="pracownikSekretariatu">pracownik sekretariatu</option>
+            <option value="pracownikDzialuzakupow">pracownik działu zakupów</option>
+            <option value="specjalistaDsDostaw">specjalista ds dostaw</option>
+            <option value="ksiegowa">ksiegowa</option>
+        </select>
         <br>
         <label>Podaj datę urodzenia:</label>
         <br>
@@ -132,9 +138,13 @@ session_start();
         <br>
         <input type="text" name="login" placeholder="login" minlength="2" maxlength="20" onclick="hide()">
         <br>
-        <label>Podaj hasło:</label>
+        <label>Podaj hasło: (hasło musi zawierać wielką literę, małą literę, liczbę i musi mieć co najmniej 8 znaków)</label>
         <br>
-        <input type="text" name="password" placeholder="hasło" minlength="8" maxlength="20" onclick="hide()">
+        <input type="text" name="password" placeholder="hasło" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="-webkit-text-security: disc" minlength="8" maxlength="20" onclick="hide()">
+        <br>
+        <label>Powtórz hasło: </label>
+        <br>
+        <input type="text" name="passwordCheck" placeholder="hasło" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="-webkit-text-security: disc" minlength="8" maxlength="20" onclick="hide()">
         <br>
         <label>Podaj miejscowość:</label>
         <br>

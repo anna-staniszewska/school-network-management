@@ -11,6 +11,7 @@ if(isset($_POST["submit"])) {
     $phone = $_POST["phone"];
     $login = $_POST["login"];
     $password = $_POST["password"];
+    $passwordCheck = $_POST["passwordCheck"];
     $pesel = $_POST["pesel"];
     $town = $_POST["town"];
     $road = $_POST["road"];
@@ -22,7 +23,7 @@ if(isset($_POST["submit"])) {
     include "../classes/newEmployeeController.php";
 
     $employee = new \classes\newEmployeeController($name, $surname, $position, $dateOfBirth, $email, $phone,
-        $login, $password, $pesel, $town, $road, $building, $apartment);
+        $login, $password, $passwordCheck, $pesel, $town, $road, $building, $apartment);
 
     $employee->newEmployee();
     header("location: ../subPages/subSubPages/newEmployee.page.php?ok=ok");

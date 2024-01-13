@@ -11,6 +11,13 @@ class newEmployeeController extends newEmployeeModel{
     private $phone;
     private $login;
     private $password;
+    private $passwordCheck;
+    private $pesel;
+    private $town;
+    private $road;
+    private $building;
+    private $apartment;
+    private $errors;
 
     /**
      * @param $name
@@ -23,7 +30,7 @@ class newEmployeeController extends newEmployeeModel{
      * @param $password
      */
     public function __construct($name, $surname, $position, $dateOfBirth, $email, $phone,
-                                $login, $password,  $pesel, $town, $road, $building, $apartment)
+                                $login, $password, $passwordCheck, $pesel, $town, $road, $building, $apartment)
     {
         $this->name = $name;
         $this->surname = $surname;
@@ -33,6 +40,7 @@ class newEmployeeController extends newEmployeeModel{
         $this->phone = $phone;
         $this->login = $login;
         $this->password = $password;
+        $this->passwordCheck = $passwordCheck;
         $this->pesel = $pesel;
         $this->town = $town;
         $this->road = $road;
@@ -44,11 +52,16 @@ class newEmployeeController extends newEmployeeModel{
     public function newEmployee()
     {
 //        if ($this->emptyInput() == false) {
-//            $_SESSION["feedbackInputProduct"] = "Nie wprowadzono nazwy!";
-//            header("location: ../subPages/subSubPages/newEmployee.page.php?error=emptyinput".$this->name);
-//            exit();
+//            $_SESSION["feedbackNewEmployee"] = "Nie wprowadzono wszystkich danych!";
+//           header("location: ../subPages/subSubPages/newEmployee.page.php?error=emptyinput".empty($this->imie));
+//           exit();
 //        }
 
+        if($this->password != $this->passwordCheck){
+            $_SESSION["feedbackNewEmployee"] = "Powtórz hasło";
+            header("location: ../subPages/subSubPages/newEmployee.page.php?error=invalidpassword");
+            exit();
+        }
         $this->inputToDatabase($this->name, $this->surname, $this->position, $this->dateOfBirth, $this->email, $this->phone,
             $this->login, $this->password,  $this->pesel, $this->town, $this->road, $this->building, $this->apartment);
 
@@ -57,12 +70,15 @@ class newEmployeeController extends newEmployeeModel{
     private function emptyInput()
     {
         $result = true;
-        if (empty($this->imie) || empty($this->surname) || empty($this->position) || empty($this->dateOfBirth) ||
-            empty($this->email) || empty($this->phone) || empty($this->login) || empty($this->password) ||
-            empty($this->pesel) || empty($this->town) || empty($this->road) || empty($this->building)) {
+        if (empty($this->imie)) {
+
             $result = false;
         }
         return $result;
     }
 
 }
+
+//empty($this->imie) || empty($this->surname) || empty($this->position) || empty($this->dateOfBirth) ||
+//empty($this->email) || empty($this->phone) || empty($this->login) || empty($this->password) ||
+//empty($this->pesel) || empty($this->town) || empty($this->road) || empty($this->building)
