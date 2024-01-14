@@ -6,7 +6,7 @@ class ScheduleModel extends Database {
           $sql = "SELECT Rozmowy.DATA AS Data, DATE_FORMAT(Rozmowy.GodzinaRozpoczecia, '%H:%i') AS GodzinaRozpoczecia,
             DATE_FORMAT(Rozmowy.GodzinaZakonczenia, '%H:%i') AS GodzinaZakonczenia,
             Szkola.IdSzkoly, Szkola.Nazwa, Sale.IdSali,
-            Kandydaci.Stanowisko, Kandydaci.Imie, Kandydaci.Nazwisko
+            Kandydaci.Stanowisko, Kandydaci.Imie, Kandydaci.Nazwisko, Rozmowy.IdRozmowy
             FROM Rozmowy
             JOIN Kandydaci ON Rozmowy.IdKandydata=Kandydaci.IdKandydata
             JOIN Sale ON Rozmowy.IdSali=Sale.IdSali
@@ -17,7 +17,7 @@ class ScheduleModel extends Database {
           $sql = "SELECT Rozmowy.DATA AS Data, DATE_FORMAT(Rozmowy.GodzinaRozpoczecia, '%H:%i') AS GodzinaRozpoczecia,
             DATE_FORMAT(Rozmowy.GodzinaZakonczenia, '%H:%i') AS GodzinaZakonczenia,
             Szkola.IdSzkoly, Szkola.Nazwa, Sale.IdSali,
-            Kandydaci.Stanowisko, Kandydaci.Imie, Kandydaci.Nazwisko
+            Kandydaci.Stanowisko, Kandydaci.Imie, Kandydaci.Nazwisko, Rozmowy.IdRozmowy
             FROM Rozmowy
             JOIN Kandydaci ON Rozmowy.IdKandydata=Kandydaci.IdKandydata
             JOIN Sale ON Rozmowy.IdSali=Sale.IdSali
