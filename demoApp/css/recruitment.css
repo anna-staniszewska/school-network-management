@@ -82,10 +82,6 @@ button{
     margin: 10px 0;
 }
 
-button:last-child{
-    float: right;
-}
-
 a:hover, button:hover{
     color: black;
 }
@@ -93,23 +89,44 @@ a:hover, button:hover{
 table, tbody{
     background-color: rgba(255, 255, 255, 0.473);
     box-shadow: 1px 1px 8px 1px rgb(40, 74, 87);
-    width: 90%;
-    margin: auto;
+    width: 95%;
+    margin: 0 auto;
     border: 1px solid black;
     border-collapse: collapse;
+    
 }
 
 th{
     padding: 10px 0;
 }
 
+td{
+    vertical-align: top;
+}
+
 th, td{
     border: 1px solid black;
 }
 
-td > div{
+tr:last-child{
+    position: relative;
+}
+
+.meeting{
     background-color: orange;
     margin: 5px;
     box-shadow: 3px 3px 3px gray;
     padding: 5px;
+    position: absolute;
+    /* display: inline-block; */
+    width: 190px;
+}
+
+.hour{
+    height: 200px;
+}
+
+.modify{
+    margin: 10px;
+    width: 40%;
 }
