@@ -141,9 +141,9 @@ session_start();
         if($_SESSION["Stanowisko"]=="pracownikDzialuZakupow"){
             ?>
             <div id="przycisk">
-                <form action="acceptReject.inc.php" method="post">
-                    <textarea name="komentarz" rows="4" cols="50" maxlength="250">Tu wpisz komentarz</textarea>
-                    <input type="hidden" name="orderId" value="<?php echo $_SESSION["rowOrders"][$i]['IdZamowienia']; ?>">
+                <form action="../../includes/acceptReject.inc.php" method="post">
+                    <textarea name="komentarz" rows="4" cols="50" maxlength="250">Brak</textarea>
+                    <input type="hidden" name="orderId" value="<?php echo $currentIdZamowienia; ?>">
                     <button type="submit" name="action" value="accept">Akceptuj zamówienie</button>
                     <button type="submit" name="action" value="reject">Odrzuć zamówienie</button>
                 </form>
