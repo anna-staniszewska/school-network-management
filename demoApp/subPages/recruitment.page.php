@@ -10,6 +10,7 @@ session_start();
     <title>Rekrutacja</title>
     <link rel="stylesheet" type="text/css" href="../css/recruitment.css">
     <link rel="shortcut icon" href="../css/logo.jpg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <style>
         .hidden{
@@ -115,33 +116,110 @@ session_start();
             ?>
         </tr>
         <tr>
-            <th></th> <!--godziny-->
+            <td>
+                <?php
+                    $hours = array();
+                    $hoursNumbers = array();
+                    for($a=7;$a<21;$a+=0.5){
+                        $hoursNumbers[] = $a;
+                    }
+                    
+                    for($a=7;$a<21;$a++){
+                        echo "<div class='hour'>$a:00</div>";
+                        if ($a < 10){
+                            $hours[] = '0' . $a . ':00';
+                            $hours[] = '0' . $a . ':30';
+                        }
+                        else{
+                            $hours[] = $a . ':00';
+                            $hours[] = $a . ':30';
+                        }
+                    };
+                ?>
+            </td> 
+            <script>
+                const tops = [];
+                const lefts = [];
+            </script>
             <?php
             $row = $_SESSION["spotkania"];
             for($i=0; $i < 7; $i++) {
                 echo "<td>";
+                $meetingsStarts = array();
+                $meetingsEnds = array();
+                $l = 0;
                 for ($j = 0; $j < count($row); $j++) {
                     if ($days[$i] == $row[$j]["Data"]) {
-                        echo "<div>";
-                        echo $row[$j]['GodzinaRozpoczecia'] . ' - ' . $row[$j]['GodzinaZakonczenia'] . '<br>';
+                        $startHour = $row[$j]['GodzinaRozpoczecia'];
+                        $endHour = $row[$j]['GodzinaZakonczenia'];
+                        echo "<div class='meeting'>";
+                        echo $startHour . ' - ' . $endHour . '<br>';
                         echo $row[$j]['Imie'] . ' ' . $row[$j]['Nazwisko'] . '<br>';
                         echo $row[$j]['Stanowisko'] . '<br>';
                         echo $row[$j]['IdSali'] . '<br>';
 
-                        echo '<form action="../includes/modifyMeeting.inc.php" method="post">';
-                        echo '<input class="hidden" type="number" name="IdRozmowy" value="' . $row[$j]['IdRozmowy'] . '">';
-                        echo '<button type="submit" name="submitId">Modyfikuj</button>';
-                        echo '</form>';
-
                         if($_SESSION["Stanowisko"]=="wlasciciel") {
                             echo "Szkoła nr " . $row[$j]['IdSzkoly'];
                         }
+
+                        echo '<form action="../includes/modifyMeeting.inc.php" method="post">';
+                        echo '<input class="hidden" type="number" name="IdRozmowy" value="' . $row[$j]['IdRozmowy'] . '">';
+                        echo '<button class="modify" type="submit" name="submitId">Modyfikuj</button>';
+                        echo '</form>';
+
                         echo "</div>";
+
+                        for($a=0;$a<28;$a++){
+                            if($startHour == $hours[$a]){
+                                $meetingsStarts[$l] = $hoursNumbers[$a]; 
+                            }
+                        }
+                        for($a=0;$a<28;$a++){
+                            if($endHour == $hours[$a]){
+                                $meetingsEnds[$l] = $hoursNumbers[$a]; 
+                            }
+                        }
+                        $currStart = $meetingsStarts[$l];
+                        $currEnd = $meetingsEnds[$l];
+                        $l++;
+
+                        if($l > 0){
+                            $k = 0;
+                            for($a=0;$a<count($meetingsEnds);$a++){
+                                if(($currStart <= $meetingsStarts[$a] && $meetingsStarts[$a] < $currEnd) || ($currStart < $meetingsEnds[$a] && $meetingsEnds[$a] <= $currEnd)){
+                                    $k += 200;  
+                                    ?>
+                                    <script>
+                                        lefts.push(<?php echo $k?>);
+                                    </script>
+                                    <?php
+                                }
+                            }
+                        }
+                        for($a=0;$a<28;$a++){
+                            if($startHour == $hours[$a]){
+                                ?>
+                                <script>
+                                    tops.push(<?php echo $a * 100?>);
+                                </script>
+                                <?php
+                            }
+                        }
                     }
                 }
                 echo "</td>";
             }
             ?>
+            <script>
+                $(document).ready(function(){
+                    var t = 0
+                    $('.meeting').each(function(){
+                        $(this).css('top', tops[t]+'px');
+                        /* $(this).css('left', lefs[t]+'px'); */
+                        t++;
+                    });
+                });
+            </script>
         </tr>
     </table>
 </main>
