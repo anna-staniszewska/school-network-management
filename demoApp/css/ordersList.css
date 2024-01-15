@@ -97,7 +97,57 @@ h2{
   font-size: 20px;
 }
 
+#przycisk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+#komentarz {
+  width: 80%;
+  height: 15px;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+#accept {
+  padding: 5px 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: none;
+  margin-left: 41.7%;
+}
+
+#reject {
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+
+
 a:hover {
     color: black;
 }
 
+#accept:hover {
+    color: black;
+}
+
+#reject:hover {
+    color: black;
+}
