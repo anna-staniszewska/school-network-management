@@ -59,9 +59,22 @@ a{
     float: right;
 }
 
+a:hover, button:hover{
+    color: black;
+}
+
 #formButtons{
     display: flex;
-    justify-content: space-around;
+}
+
+#formButtons > a{
+    flex-grow: 5;
+    margin-left: 5px;
+}
+
+#formButtons > button{
+    flex-grow: 5;
+    margin-right: 5px;
 }
 
 .formButton{
