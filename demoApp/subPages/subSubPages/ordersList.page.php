@@ -80,6 +80,8 @@ session_start();
 
   <footer>&copy; 2023 Sieć szkół</footer>
   <a class="button" id="logout" href="../../includes/logout.inc.php">Wyloguj</a>
+
+
   <?php
         if($_SESSION["Stanowisko"]=="wlasciciel") {
             echo '<a class="button" href="../ownerHome.page.php">HOME</a>';
@@ -92,6 +94,7 @@ session_start();
 </header>
 
 <main>
+
 
     <?php
 
@@ -112,17 +115,20 @@ session_start();
             ?>
             <div id="wiersz">
                 <?php
-                echo 'ID Zamówienia: ' . $_SESSION["rowOrders"][$i]['IdZamowienia'] . ' ' . 'ID Szkoły: ' .
-                    $_SESSION["rowOrders"][$i]['IdSzkoly'] . ' ' . 'Szkoła: ' . $_SESSION["rowOrders"][$i]['Nazwa'] .
-                    ' ' . 'Data: ' . $_SESSION["rowOrders"][$i]['Data'] . ' ' . 'Stan zamówienia: ' . $_SESSION["rowOrders"][$i]['Stan'] .
-                    ' ' . 'Komentarz: ' . $_SESSION["rowOrders"][$i]['Komentarz'] . ' ' . 'Dostarczony: ' . $_SESSION["rowOrders"][$i]['Dostarczony'] .
-                    ' ' . '<br>';
+                echo 'ID Zamówienia: ' . $_SESSION["rowOrders"][$i]['IdZamowienia'] . ' ' .
+                'ID Szkoły: ' . $_SESSION["rowOrders"][$i]['IdSzkoly'] . ' ' .
+                'Szkoła: ' . $_SESSION["rowOrders"][$i]['Nazwa'] . ' ' .
+                'Data: ' . $_SESSION["rowOrders"][$i]['Data'] . ' ' .
+                'Stan zamówienia: ' . $_SESSION["rowOrders"][$i]['Stan'] . ' ' .
+                'Komentarz: ' . $_SESSION["rowOrders"][$i]['Komentarz'] . ' ' .
+                'Dostarczony: ' . $_SESSION["rowOrders"][$i]['Dostarczony'] . ' ' . '<br>';
                ?>
             </div>
            <?php
             $currentDate = $_SESSION["rowOrders"][$i]['Data'];
             $currentIdSzkoly = $_SESSION["rowOrders"][$i]['IdSzkoly'];
             $currentIdZamowienia=$_SESSION["rowOrders"][$i]['IdZamowienia'];
+
             while($j < count($_SESSION["rowProducts"]) && $_SESSION["rowProducts"][$j]['IdZamowienia'] === $currentIdZamowienia){
                     ?>
                     <div id="produkt">
@@ -141,13 +147,13 @@ session_start();
         if($_SESSION["Stanowisko"]=="pracownikDzialuZakupow"){
             ?>
             <div id="przycisk">
-                <form action="../../includes/acceptReject.inc.php" method="post">
-                    <textarea name="komentarz" rows="4" cols="50" maxlength="250">Brak</textarea>
+                <form action="acceptReject.inc.php" method="post">
+                    <textarea id="komentarz" name="komentarz" rows="4" cols="50" maxlength="250">Wpisz komenatrz</textarea>
                     <input type="hidden" name="orderId" value="<?php echo $currentIdZamowienia; ?>">
-                    <button type="submit" name="action" value="accept">Akceptuj zamówienie</button>
-                    <button type="submit" name="action" value="reject">Odrzuć zamówienie</button>
+                    <button id="accept" type="submit" name="action" value="accept">Akceptuj zamówienie</button>
+                    <button id="reject" type="submit" name="action" value="reject">Odrzuć zamówienie</button>
                 </form>
-            <?php 
+            <?php
         }
     }
     ?>
