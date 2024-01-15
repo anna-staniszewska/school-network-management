@@ -169,7 +169,7 @@ session_start();
             ?>
             <div id="przycisk">
                 <form action="../../includes/acceptReject.inc.php" method="post">
-                    <textarea id="komentarz" name="komentarz" rows="4" cols="50" maxlength="250">Wpisz komenatrz</textarea>
+                    <textarea id="komentarz" name="komentarz" placeholder="wpisz komentarz" rows="4" cols="50" maxlength="250"></textarea>
                     <input type="hidden" name="orderId" value="<?php echo $currentIdZamowienia; ?>">
                     <button id="accept" type="submit" name="action" value="accept">Akceptuj zamówienie</button>
                     <button id="reject" type="submit" name="action" value="reject">Odrzuć zamówienie</button>
