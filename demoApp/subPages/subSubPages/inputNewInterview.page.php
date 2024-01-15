@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, inital-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Dodanie rozmowy</title>
-        <link rel="stylesheet" type="text/css" href="../css/inputProducts.css">
+        <link rel="stylesheet" type="text/css" href="../../css/inputNewInterview.css">
         <link rel="shortcut icon" href="../../css/logo.jpg">
     </head>
 
@@ -19,13 +19,8 @@
                     <img src="../../css/logo.jpg" width=150px>
                 </div>
 
-                <div id="welcome">
-                    <h1>Cześć, <?php
-                        echo $_SESSION["Imie"];
-                        ?>!
-                    </h1>
-                </div>
-
+                <h1>Nowe spotkanie</h1>
+                
                 <div id="zegar">
                     <p id="data">
                         <script language="JavaScript">
@@ -81,7 +76,7 @@
                 </div>
             </div>
 
-            <a href="../includes/logout.inc.php">Wyloguj</a>
+            <a href="../../includes/logout.inc.php">Wyloguj</a>
         </header>
 
         <main>
@@ -92,82 +87,94 @@
            ?>
             <h2>Dodaj nową rozmowę:</h2>
             <form action="../../includes/newCandidateAndInterview.inc.php" method="post">
-                    <b>Kandydat</b><br>
-                    <label>Wpisz imię kandydata</label>
-                    <br>
-                    <input type="text" name="name" placeholder="imie kandydata" onclick="hide()">
-                    <br>
-                    <label>Wpisz nazwisko kandydata</label>
-                    <br>
-                    <input type="text" name="surname" placeholder="nazwisko kandydata">
-                    <br>
-                    <label>Wpisz datę urodzenia kandydata</label>
-                    <br>
-                    <input type="date" name="birthDate">
-                    <br>
-                    <label>Wpisz email kandydata</label>
-                    <br>
-                    <input type="text" name="email">
-                    <br>
-                    <label>Wpisz ulicę kandydata</label>
-                    <br>
-                    <input type="text" name="street">
-                    <br>
-                    <label>Numer budynku</label>
-                    <br>
-                    <input type="text" name="building">
-                    <br>
-                    <label>Numer mieszkania</label>
-                    <br>
-                    <input type="text" name="flat">
-                    <br>
-                    <label>Miejscowość</label>
-                    <br>
-                    <input type="text" name="city">
-                    <br>
-                    <label>Numer telefonu</label>
-                    <br>
-                    <input type="text" name="phoneNumber">
-                    <br>
-                    <label>PESEL</label>
-                    <br>
-                    <input type="text" name="PESEL">
-                    <br>
-                    <label>Stanowisko</label>
-                    <br>
-                    <input type="text" name="job">
-                    <br>
-                    <b>Rozmowa</b><br>
-                    <label>Data rozmowy</label>
-                    <br>
-                    <input type="date" name="interviewDate">
-                    <br>
-                    <label>Godzina rozpoczęcia</label>
-                    <br>
-                    <input type="time" name="interviewStartTime">
-                    <br>
-                    <label>Godzina zakończenia</label>
-                    <br>
-                    <input type="time" name="interviewStopTime">
-                    <br>
-                    <label>Wybierz salę</label>
-                    <br>
-                    <select name="room">
-                      <?php
-                        for ($i=0; $i < count($_SESSION["sale"]); $i++) {
-                          echo '<option value="' . $_SESSION["sale"][$i]["IdSali"] . '">' . $_SESSION["sale"][$i]["IdSali"] . '</option>';
-                        }
-                       ?>
-                    </select>
-                    <p id="feedback">
+                <div id="formInput">
+                    <div id="candidate">
+                        <b>Kandydat</b><br>
+                        <label>Wpisz imię kandydata</label>
+                        <br>
+                        <input type="text" name="name" placeholder="imie kandydata" onclick="hide()">
+                        <br>
+                        <label>Wpisz nazwisko kandydata</label>
+                        <br>
+                        <input type="text" name="surname" placeholder="nazwisko kandydata">
+                        <br>
+                        <label>Wpisz datę urodzenia kandydata</label>
+                        <br>
+                        <input type="date" name="birthDate">
+                        <br>
+                        <label>Wpisz email kandydata</label>
+                        <br>
+                        <input type="text" name="email">
+                        <br>
+                        <label>Wpisz ulicę kandydata</label>
+                        <br>
+                        <input type="text" name="street">
+                        <br>
+                        <label>Numer budynku</label>
+                        <br>
+                        <input type="text" name="building">
+                        <br>
+                        <label>Numer mieszkania</label>
+                        <br>
+                        <input type="text" name="flat">
+                        <br>
+                        <label>Miejscowość</label>
+                        <br>
+                        <input type="text" name="city">
+                        <br>
+                        <label>Numer telefonu</label>
+                        <br>
+                        <input type="text" name="phoneNumber">
+                        <br>
+                        <label>PESEL</label>
+                        <br>
+                        <input type="text" name="PESEL">
+                        <br>
+                        <label>Stanowisko</label>
+                        <br>
+                        <input type="text" name="job">
+                        <br><br>
+                    </div>
+
+                    <div id="meeting">
+                        <b>Rozmowa</b><br>
+                        <label>Data rozmowy</label>
+                        <br>
+                        <input type="date" name="interviewDate">
+                        <br>
+                        <label>Godzina rozpoczęcia</label>
+                        <br>
+                        <input type="time" name="interviewStartTime">
+                        <br>
+                        <label>Godzina zakończenia</label>
+                        <br>
+                        <input type="time" name="interviewStopTime">
+                        <br>
+                        <label>Wybierz salę</label>
+                        <br>
+                        <select name="room">
                         <?php
-                            if(isset($_SESSION["feedbackInputProduct"])) {
-                                echo $_SESSION["feedbackInputProduct"];
+                            for ($i=0; $i < count($_SESSION["sale"]); $i++) {
+                            echo '<option value="' . $_SESSION["sale"][$i]["IdSali"] . '">' . $_SESSION["sale"][$i]["IdSali"] . '</option>';
                             }
                         ?>
-                    </p>
+                        </select>
+                        <br>
+                    </div>
+                </div>
 
-                    <button type = "submit" name = "addInterview">Zgłoś</button>
+                <p id="feedback">
+                    <?php
+                        if(isset($_SESSION["feedbackInputProduct"])) {
+                            echo $_SESSION["feedbackInputProduct"];
+                        }
+                    ?>
+                </p>
+                
+                <div id="formButtons">
+                    <button class="formButton" type = "submit" name = "addInterview">Zgłoś</button>
+                    <a class="formButton" href="../recruitment.page.php">Anuluj</a>
+                </div>
             </form>
 
             <script>
