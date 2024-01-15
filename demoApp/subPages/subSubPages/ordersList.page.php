@@ -12,6 +12,18 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../../css/ordersList.css">
     <title>Lista zamówień</title>
     <link rel="shortcut icon" href="../../css/logo.jpg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // $(document).ready(function (){
+        //     $("#delivery").click(function() {
+        //         $(this).css('background-color', 'red');
+        //     });
+        // });
+        document.getElementById('delivery').addEventListener('click', function onClick(){
+            document.getElementById('delivery').style.backgroundColor='red';
+        })
+        <!--                --><?php //echo $_SESSION["buttonColor"]; ?>
+    </script>
 </head>
 <body>
 
@@ -142,12 +154,21 @@ session_start();
                     <?php
                 $j++;
             }
+            if($_SESSION["Stanowisko"]=="specjalistaDsDostaw" && $_SESSION["rowOrders"][$i]['Stan'] === "Zaakceptowano" ){
+                ?>
+                    <form id="form" action="../../includes/acceptReject.inc.php" method="post">
+                        <input type="hidden" name="checkbox" value="<?php echo $currentIdZamowienia; ?>">
+                        <input id="delivery" type="submit" name="submit" value="dostarczone">
+                    </form>
+
+                <?php
+            }
         }
         $i++;
         if($_SESSION["Stanowisko"]=="pracownikDzialuZakupow"){
             ?>
             <div id="przycisk">
-                <form action="acceptReject.inc.php" method="post">
+                <form action="../../includes/acceptReject.inc.php" method="post">
                     <textarea id="komentarz" name="komentarz" rows="4" cols="50" maxlength="250">Wpisz komenatrz</textarea>
                     <input type="hidden" name="orderId" value="<?php echo $currentIdZamowienia; ?>">
                     <button id="accept" type="submit" name="action" value="accept">Akceptuj zamówienie</button>

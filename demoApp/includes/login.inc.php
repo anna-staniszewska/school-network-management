@@ -30,7 +30,7 @@ if(isset($_POST["submit"])){
         header("location: ../includes/orders.inc.php");
 
     }elseif($_SESSION["Stanowisko"] == "specjalistaDsDostaw"){
-        header("location: ../subPages/deliveryCheck.page.php");
+        header("location: ../includes/orders.inc.php");
 
     }elseif($_SESSION["Stanowisko"] == "ksiegowa"){
         header("location: ../subPages/raport.page.php");

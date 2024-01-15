@@ -50,7 +50,7 @@ class OrdersModel extends Database {
          );
         $stmtOrders->execute([$schoolId]);
         $stmtProducts->execute([$schoolId]);
-      }else if($jobPosition=="pracownikDzialuZakupow"){
+      }else if($jobPosition=="pracownikDzialuZakupow" || $jobPosition=="specjalistaDsDostaw"){
         $stmtOrders = $this->connect()->prepare(
         "SELECT  
           zamowienia.*, szkola.Nazwa

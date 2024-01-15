@@ -138,6 +138,16 @@ h2{
 
 }
 
+#delivery{
+    padding: 5px 10px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: none;
+    margin-left: 41.7%;
+}
 
 
 a:hover {
@@ -149,5 +159,9 @@ a:hover {
 }
 
 #reject:hover {
+    color: black;
+}
+
+#delivery:hover {
     color: black;
 }
