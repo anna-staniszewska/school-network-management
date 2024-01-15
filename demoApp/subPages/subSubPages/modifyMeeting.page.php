@@ -8,6 +8,7 @@ session_start();
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Modyfikacja spotkania</title>
+    <link rel="stylesheet" type="text/css" href="../../css/modifyMeeting.css">
     <link rel="shortcut icon" href="../../css/logo.jpg">
 </head>
 
@@ -17,6 +18,8 @@ session_start();
         <div id="logo">
             <img src="../../css/logo.jpg" width=150px>
         </div>
+
+        <h1>Modyfikuj</h1>
 
         <div id="zegar">
             <p id="data">
@@ -73,12 +76,9 @@ session_start();
         </div>
     </div>
 
-    <a class="button" id="logout" href="../includes/logout.inc.php">Wyloguj</a>
-    <?php
-    if($_SESSION["Stanowisko"]=="wlasciciel") {
-        echo '<a class="button" href="./ownerHome.page.php">HOME</a>';
-    }
-    ?>
+    <a class="button" id="logout" href="../../includes/logout.inc.php">Wyloguj</a>
+    <a class="button" href="../recruitment.page.php">HOME</a>
+
 
 </header>
 
@@ -87,7 +87,6 @@ session_start();
     <div>
         <?php
         /*IdRozmowy: <?php echo $_SESSION["IdRozmowy"]; ?>*/
-
         $meetingInformations = $_SESSION["spotkanie"][0];
         echo "<h3>Inforamcje o kandydacie</h3>";
         echo "Imie: " . $meetingInformations["Imie"] . "<br>";
@@ -96,14 +95,13 @@ session_start();
         echo "Data urodzenia: " . $meetingInformations["DataUrodzenia"] . "<br>";
         echo "Nr. telefonu: " . $meetingInformations["NrTelefonu"] . "<br>";
         echo "E-mail: " . $meetingInformations["Email"] . "<br>";
-        echo "Miejscowosc: " . $meetingInformations["Miejscowosc"] . "<br>";
+        echo "Miejscowość: " . $meetingInformations["Miejscowosc"] . "<br>";
         echo "Ulica: " . $meetingInformations["Ulica"] . "<br>";
         echo "Nr. budynku: " . $meetingInformations["NrBudynku"] . "<br>";
         if ($meetingInformations["NrLokalu"] != null) {
             echo "Nr. lokalu: " . $meetingInformations["NrLokalu"] . "<br>";
         }
         echo "Pesel: " . $meetingInformations["Pesel"] . "<br>";
-
         echo "<h3>Informacje o spotkaniu</h3>";
         echo "Godzina rozpoczęcia: " . $meetingInformations["GodzinaRozpoczecia"] . "<br>";
         echo "Godzina zakończenia: " . $meetingInformations["GodzinaZakonczenia"] . "<br>";
@@ -116,25 +114,25 @@ session_start();
     <form action="../../includes/modifyMeeting.inc.php" method="POST">
         <label>Nr. sali:</label>
         <br>
-        <input type="text" name="roomId" placeholder="Nr. sali" minlength="1" maxlength="12"  required>
+        <input id="text" type="text" name="roomId" placeholder="Nr. sali" minlength="1" maxlength="12"  required>
         <br>
         <label>Godzina rozpoczęcia:</label>
         <br>
-        <input type="time" name="startTime" placeholder="godzina rozpoczęcia" minlength="5" maxlength="5" required>
+        <input id="time" type="time" name="startTime" placeholder="godzina rozpoczęcia" minlength="5" maxlength="5" required>
         <br>
         <label>Godzina zakończenia:</label>
         <br>
-        <input type="time" name="endTime" placeholder="godzina zakończenia" minlength="5" maxlength="5" required>
+        <input id="time" type="time" name="endTime" placeholder="godzina zakończenia" minlength="5" maxlength="5" required>
         <br>
         <label>Data spotkania</label>
         <br>
-        <input type="date" name="meetingDate"  placeholder="dd-mm-yyyy" onclick="hide()" required>
+        <input id="date" type="date" name="meetingDate"  placeholder="dd-mm-yyyy" onclick="hide()" required>
         <br>
-        <button type="submit" name="submitModify">Modyfikuj</button>
+        <button id ="modify" type="submit" name="submitModify">Modyfikuj</button>
     </form>
 
     <form action="../../includes/modifyMeeting.inc.php" method="POST">
-        <button type="submit" name="submitDelete">Usuń spotkanie</button>
+        <button id ="delete" type="submit" name="submitDelete">Usuń spotkanie</button>
     </form>
 
 
