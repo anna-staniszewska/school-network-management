@@ -1,0 +1,167 @@
+body{
+    font-family: "Times New Roman", Times, serif;
+    width: 95%;
+    margin: auto;
+    background-color: mintcream;
+}
+
+header{
+    background-color: mintcream;
+    border-bottom: 2px solid rgb(40, 74, 87);
+    box-shadow: 0 4px 2px -2px rgb(40, 74, 87);
+}
+
+.headerContainer{
+    display: flex;
+}
+
+#logo{
+    flex: 2;
+    margin: 20px;
+}
+
+h1{
+    flex: 6;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+#zegar{
+    flex: 2;
+    text-align: center;
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+footer{
+    text-align: right;
+    padding: 10px 50px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+a{
+    background-color: rgb(40, 74, 87);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration: none;
+    float: right;
+}
+
+
+main{
+    background-color: rgba(255, 255, 255, 0.473);
+    width: 80%;
+    margin: 80px auto;
+    box-shadow: 2px 2px 10px 2px rgb(40, 74, 87);
+}
+
+
+h2{
+    padding: 10px;
+}
+
+#logout{
+    border-left: 2px solid mintcream;
+}
+
+#wiersz{ /*dotyczy wyswietlania wiersza w tabeli*/
+
+  background-color: white;
+  border: none;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  position: center;
+  padding: 5px 10%;
+
+  font-size: 20px;
+
+}
+
+#produkt{ /*dotyczy wyswietlania produktow w tabeli*/
+
+  background-color: white;
+  border: none;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  position: center;
+  padding: 2px 20%;
+
+  font-size: 20px;
+}
+
+#przycisk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+#komentarz {
+  width: 80%;
+  height: 15px;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+#accept {
+  padding: 5px 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: none;
+  margin-left: 41.7%;
+}
+
+#reject {
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+#delivery{
+    padding: 5px 10px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: none;
+    margin-left: 41.7%;
+}
+
+
+a:hover {
+    color: black;
+}
+
+#accept:hover {
+    color: black;
+}
+
+#reject:hover {
+    color: black;
+}
+
+#delivery:hover {
+    color: black;
+}

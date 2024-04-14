@@ -1,0 +1,40 @@
+body{
+    background-color: mintcream;
+    font-family: "Times New Roman", Times, serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#home{
+    padding: 10px 0px;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+    margin: 50px;
+}
+
+#newOrder{
+    margin: auto;
+    width: 300px;
+}
+
+a{
+    background-color: rgb(40, 74, 87);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+footer{
+    padding: 10px;
+}
+

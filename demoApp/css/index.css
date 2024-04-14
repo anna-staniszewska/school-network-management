@@ -1,0 +1,101 @@
+body{
+    background-color: mintcream;
+    background-image: url("szkola_tlo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "Times New Roman", Times, serif;
+}
+
+header{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.473);
+    border-radius: 10px;
+}
+
+#logo{
+    flex: 8;
+    margin: 20px;
+}
+
+img{
+    border-radius: 10px;
+}
+
+#zegar{
+    flex: 2;
+    text-align: center;
+    font-size: 20px;
+    background-color: mintcream;
+    border-radius: 0px 10px 10px 0px;
+    padding: 5px 20px;
+    border-left: 2px solid rgb(40, 74, 87);
+}
+
+#main{
+    background-color: rgba(255, 255, 255, 0.473);
+    width: 700px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+h1{
+    border-bottom: 2px solid rgb(40, 74, 87);
+    background-color: mintcream;
+    margin: 10% auto auto auto;
+    padding: 5px;
+    border-radius: 10px 10px 0px 0px;
+    color: rgb(40, 74, 87);
+    font-size: 50px;
+    text-align: center;
+    line-height: 100px;
+}
+
+main{
+    padding: 50px;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    width: 400px;
+}
+
+label{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+input{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+
+}
+
+input[type=text] {
+    padding: 20px;
+}
+
+input[placeholder]{
+    font-size: 20px;
+}
+
+button[type=submit] {
+    background-color: rgb(40, 74, 87);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#error{
+    color: rgb(206, 59, 59);
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}

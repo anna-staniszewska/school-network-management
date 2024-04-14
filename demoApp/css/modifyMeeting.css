@@ -1,0 +1,126 @@
+body{
+    font-family: "Times New Roman", Times, serif;
+    width: 95%;
+    margin: auto;
+    background-color: mintcream;
+}
+
+header{
+    background-color: mintcream;
+    border-bottom: 2px solid rgb(40, 74, 87);
+    box-shadow: 0 4px 2px -2px rgb(40, 74, 87);
+}
+
+.headerContainer{
+    display: flex;
+}
+
+#logo{
+    flex: 2;
+    margin: 20px;
+}
+
+h1{
+    flex: 6;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+#zegar{
+    flex: 2;
+    text-align: center;
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+footer{
+    text-align: right;
+    padding: 10px 50px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+a, button{
+    background-color: rgb(40, 74, 87);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration: none;
+    text-align: center;
+}
+
+a{
+    float: right;
+}
+
+a:hover, button:hover{
+    color: black;
+}
+
+main{
+    width: 500px;
+    margin: 100px auto;
+    background-color: rgba(255, 255, 255, 0.473);
+    box-shadow: 1px 1px 8px 1px rgb(40, 74, 87);
+    padding: 10px;
+}
+
+#meetingInfo{
+    display: flex;
+    text-align: center;
+}
+
+#candidate{
+    flex: 5;
+}
+
+#meeting{
+    flex: 5;
+}
+
+h2{
+    width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+#modifyForm{
+    width: 200px;
+    margin: auto;
+}
+
+label{
+    font-size: 18px;
+}
+
+input[type=text], input[type=date], input[type=time]{
+    padding: 7px;
+    margin-bottom: 10px;
+}
+
+#modifyButton{
+    width: 500px;
+    margin: 20px auto 5px auto;
+    text-align: center;
+}
+
+form:last-child{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+form:last-child > button{
+    flex-grow: 5;
+    margin-right: 5px;
+}
+
+form:last-child > a{
+    flex-grow: 5;
+    margin-left: 5px;
+}

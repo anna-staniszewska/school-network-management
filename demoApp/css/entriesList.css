@@ -1,0 +1,139 @@
+body{
+    font-family: "Times New Roman", Times, serif;
+    width: 95%;
+    margin: auto;
+    background-color: mintcream;
+}
+
+header{
+    background-color: mintcream;
+    border-bottom: 2px solid rgb(40, 74, 87);
+    box-shadow: 0 4px 2px -2px rgb(40, 74, 87);
+}
+
+.headerContainer{
+    display: flex;
+}
+
+#logo{
+    flex: 2;
+    margin: 20px;
+}
+
+h1{
+    flex: 6;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+#zegar{
+    flex: 2;
+    text-align: center;
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+footer{
+    text-align: right;
+    padding: 10px 50px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+a{
+    background-color: rgb(40, 74, 87);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration: none;
+    float: right;
+}
+
+main{
+    /*background-color: rgba(255, 255, 255, 0.473);*/
+    width: 80%;
+    margin: 80px auto;
+    /*box-shadow: 2px 2px 10px 2px rgb(40, 74, 87);*/
+}
+
+h2{
+    font-size: 40px;
+    text-align: center;
+}
+
+.button{
+    background-color: rgb(40, 74, 87);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration: none;
+
+}
+
+#logout{
+    border-left: 2px solid mintcream;
+}
+
+#changeTable{
+background-color: rgba(255, 255, 255, 0.473);
+box-shadow: 2px 2px 10px 2px rgb(40, 74, 87);
+}
+
+#delete{
+    flex: 0.5;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+table{
+    width: 100%;
+    margin: 0px 10px 10px 0px;
+    border-collapse: collapse;
+    flex: 9;
+}
+
+table tr td, table tr th {
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 10px;
+}
+
+tr{
+    font-size: 20px;
+}
+
+/*form{
+    width: 600px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}*/
+
+input{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    width: 230px;
+    float: right;
+    margin: -10px 0;
+}
+
+
+
+a:hover {
+    color: black;
+}
+
+input:hover {
+
+  color: black;
+}
