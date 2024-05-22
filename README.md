@@ -15,3 +15,10 @@ This application provides access to multiple features that support work organiza
 * HTML
 * CSS
 ### Screenshots
+![d61yxHwV](https://github.com/anna-staniszewska/school-network-management/assets/97187091/66154dae-e14e-4a27-bb0f-c8571c593dbd)
+
+![ZWU4n3Lk](https://github.com/anna-staniszewska/school-network-management/assets/97187091/3f5c0214-5b37-43d2-8a84-f460e6f1b8eb)
+
+![xRCAVKCp](https://github.com/anna-staniszewska/school-network-management/assets/97187091/ef265309-1b83-436a-8ba1-713242816fba)
+
+![jpeYPKz7](https://github.com/anna-staniszewska/school-network-management/assets/97187091/265fd078-0480-40af-b783-f42047fec853)
